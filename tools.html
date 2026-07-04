@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tools Section</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    
+    /* Grid Theme Background */
+    background-color: #f8fafc;
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    
+    padding: 20px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Back Home Button Style */
+  .back-home {
+    align-self: flex-start;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+  }
+  .back-home:hover {
+    color: #0056b3;
+    transform: translateX(-5px);
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #1a1a1a; /* Darker for better contrast on light bg */
+  }
+
+  .tools-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .tool-badge {
+    /* Updated gradient to match your Portfolio Blue theme */
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+  }
+
+  .tool-badge:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 123, 255, 0.3);
+  }
+
+  .tool-badge img {
+    width: 25px;
+    height: 25px;
+    /* Keeps icons looking crisp on the blue background */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  }
+
+  @media (max-width: 600px) {
+    .tool-badge {
+      padding: 12px 18px;
+      font-size: 14px;
+    }
+    .back-home {
+      margin-bottom: 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<a href="frontpage.html" class="back-home">
+  <i class="fas fa-arrow-left"></i> Back to Home
+</a>
+
+<h2>Tools I Use</h2>
+<div class="tools-container">
+  <div class="tool-badge">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code"> VS Code
+  </div>
+  <div class="tool-badge">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino IDE"> Arduino IDE
+  </div>
+  <div class="tool-badge">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"> Git
+  </div>
+  <div class="tool-badge">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"> GitHub
+  </div>
+  <div class="tool-badge">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"> Java
+  </div>
+  <div class="tool-badge">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"> Python
+  </div>
+</div>
+
+</body>
+</html>

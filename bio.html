@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bio Data Flip Card</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  body {
+    display: flex;
+    flex-direction: column; /* Stack back button and card */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+    /* Grid Theme Background */
+    background-color: #f8fafc;
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+
+  /* Back Home Button Style */
+  .back-home {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+  }
+  .back-home:hover {
+    color: #0056b3;
+    transform: translateX(-5px);
+  }
+
+  .flip-card {
+    background-color: transparent;
+    width: 100%;
+    max-width: 350px;
+    height: 500px;
+    perspective: 1000px;
+    margin-top: 40px; /* Space for the back button */
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+
+  .flip-card-inner.flipped {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    backface-visibility: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Softer shadow to match theme */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+  }
+
+  /* Front - Changed to your Portfolio Blue Gradient */
+  .flip-card-front {
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  /* Back - Kept your original colors but used Montserrat as requested */
+  .flip-card-back {
+    background: white; /* Changed to white to match your card theme */
+    color: #333;
+    transform: rotateY(180deg);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid #e0e0e0;
+  }
+
+  .flip-card-back h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #007bff; /* Title matches blue theme */
+  }
+
+  .flip-card-back p {
+    font-size: 16px;
+    margin: 8px 0;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 480px) {
+    .flip-card {
+      height: 450px;
+      max-width: 100%;
+    }
+    .back-home {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-bottom: 20px;
+        align-self: flex-start;
+    }
+  }
+</style>
+</head>
+<body>
+
+<a href="frontpage.html" class="back-home">
+  <i class="fas fa-arrow-left"></i> Back to Home
+</a>
+
+<div class="flip-card" onclick="flipCard(this)">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      Click to View My Bio
+    </div>
+    <div class="flip-card-back">
+      <h1>I’m Mukilan</h1>
+      <p><strong>Born On:</strong>  14-03-2006</p>
+       <p><strong>Degree:</strong>  B.E , ECE</p>
+      <p><strong>College:</strong>  Velammal College Of Engineering   and Technology</p>
+      <p><strong>Area of Interest:</strong>  Computer Networking</p>
+      <p><strong>Hobbies:</strong>  Listening Music</p>
+      <p><strong>Email:</strong>  mukilanmukilan147@gmail.com</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// Your original flip logic
+function flipCard(card) {
+  const inner = card.querySelector('.flip-card-inner');
+  inner.classList.toggle('flipped');
+}
+</script>
+
+</body>
+</html>

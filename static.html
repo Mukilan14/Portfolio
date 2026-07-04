@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Projects - Static Slides</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      
+      /* Grid Theme Background */
+      background-color: #f8fafc;
+      background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+      background-size: 30px 30px;
+      
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Back Home Button */
+    .back-home {
+      width: 100%;
+      text-decoration: none;
+      color: #007bff;
+      font-weight: 600;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.3s;
+    }
+    .back-home:hover {
+      color: #0056b3;
+      transform: translateX(-5px);
+    }
+
+    .portfolio-box {
+      width: 320px;
+      min-height: 400px;
+      background: #ffffff;
+      border-radius: 20px;
+      /* Softer shadow to match professional theme */
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      transition: 0.3s;
+      cursor: pointer;
+      border: 1px solid #e0e0e0;
+    }
+
+    .portfolio-box:hover { 
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .portfolio-box h1 {
+      margin: 0 0 15px;
+      font-size: 18px;
+      color: #2d3436;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Distinct slide-area background */
+    .slide-area {
+      flex-grow: 1;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      font-size: 16px;
+      color: #333;
+      background: #fafafa; /* Cleaner background for the slide area */
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
+      flex-direction: column;
+      gap: 15px;
+      transition: 0.3s;
+    }
+
+    .slide-area:hover {
+      background: #f5f5f5;
+    }
+
+    /* Slides - Keeping your Original Logic */
+    .slide {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      border-radius: 15px;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      gap: 12px;
+    }
+
+    .slide.active {
+      display: flex;
+    }
+
+    .slide img {
+      max-width: 100%;
+      max-height: 180px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .slide h2 {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 5px 0;
+      /* Keeping your gradient text but using your theme blue */
+      background: linear-gradient(90deg, #007BFF, #0056b3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .slide p {
+      font-size: 14px;
+      color: #555;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .tools-title {
+      font-size: 15px;
+      font-weight: bold;
+      color: #007BFF; /* Matched to blue theme */
+      margin-bottom: 8px;
+    }
+
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .tool-badge {
+      background: #007BFF;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="frontpage.html" class="back-home">
+    <i class="fas fa-arrow-left"></i> Back to Home
+  </a>
+
+  <div class="portfolio-box" onclick="nextSlide(0)">
+    <h1>🚀 Project 1</h1>
+    <div class="slide-area">
+      <div class="slide active" id="project0-slide0">Click to view slides</div>
+      <div class="slide" id="project0-slide1"><img src="attendxProject.PNG" alt="Project 1 Image"></div>
+      <div class="slide" id="project0-slide2">
+        <h2>Smart Attendance Management System</h2>
+        <p>smart attendance management system designed to automate the process of recording and monitoring attendance for students or employees. The system allows users to mark attendance digitally, apply for leave or on-duty requests, and view their attendance records. Administrators can manage users, approve or reject requests, track attendance statistics, and generate reports. By replacing manual attendance methods, AttendX improves accuracy, reduces paperwork, prevents errors, and provides real-time attendance monitoring through a user-friendly interface..</p>
+
+      </div>
+      <div class="slide" id="project0-slide3">
+        <div class="tools-title">🛠 Tools Used</div>
+        <div class="tools">
+          <div class="tool-badge">Java</div>
+          <div class="tool-badge">My SQL</div>
+          <div class="tool-badge">Vs code</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="portfolio-box" onclick="nextSlide(1)">
+    <h1>🤖 Project 2</h1>
+    <div class="slide-area">
+      <div class="slide active" id="project1-slide0">Click to view slides</div>
+      <div class="slide" id="project1-slide1"><img src="project2.jpg" alt="Project 2 Image"></div>
+      <div class="slide" id="project1-slide2">
+        <h2>Chatbot AI</h2>
+        <p>An AI-powered chatbot designed to answer user queries instantly.</p>
+      </div>
+      <div class="slide" id="project1-slide3">
+        <div class="tools-title">🛠 Tools Used</div>
+        <div class="tools">
+          <div class="tool-badge">Python</div>
+          <div class="tool-badge">TensorFlow</div>
+          <div class="tool-badge">Flask</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="portfolio-box" onclick="nextSlide(2)">
+    <h1>🌐 Project 3</h1>
+    <div class="slide-area">
+      <div class="slide active" id="project2-slide0">Click to view slides</div>
+      <div class="slide" id="project2-slide1"><img src="project3.jpg" alt="Project 3 Image"></div>
+      <div class="slide" id="project2-slide2">
+        <h2>E-Commerce</h2>
+        <p>A full-stack e-commerce application with secure payments and product management.</p>
+      </div>
+      <div class="slide" id="project2-slide3">
+        <div class="tools-title">🛠 Tools Used</div>
+        <div class="tools">
+          <div class="tool-badge">React</div>
+          <div class="tool-badge">Node.js</div>
+          <div class="tool-badge">MongoDB</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Keeping your original slide logic exactly as it was
+    let currentSlides = [0, 0, 0];
+    const totalSlides = 4;
+
+    function nextSlide(projectIndex) {
+      document.getElementById(`project${projectIndex}-slide${currentSlides[projectIndex]}`).classList.remove('active');
+      currentSlides[projectIndex] = (currentSlides[projectIndex] + 1) % totalSlides;
+      document.getElementById(`project${projectIndex}-slide${currentSlides[projectIndex]}`).classList.add('active');
+    }
+  </script>
+</body>
+</html>

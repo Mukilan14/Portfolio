@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Skills Cards</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 20px 50px 50px;
+      font-family: 'Poppins', sans-serif;
+      
+      /* Grid Theme Background */
+      background-color: #f8fafc;
+      background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+      background-size: 30px 30px;
+
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .back-home {
+      width: 100%;
+      text-decoration: none;
+      color: #007bff;
+      font-weight: 600;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.3s;
+    }
+
+    .back-home:hover {
+      color: #0056b3;
+      transform: translateX(-5px);
+    }
+
+    .card {
+      width: 220px;
+      height: 300px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.25);
+    }
+
+    .card img {
+      width: 80px;
+      margin-bottom: 15px;
+      transition: transform 0.3s;
+    }
+
+    .card img:hover {
+      transform: scale(1.05);
+    }
+
+    .progress-container {
+      width: 100%;
+      background: rgba(255,255,255,0.2);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 20px;
+      display: none;
+    }
+
+    .progress-bar {
+      height: 20px;
+      width: 0%;
+      text-align: center;
+      line-height: 20px;
+      color: white;
+      font-weight: bold;
+      background-color: #ffffff44;
+      border-radius: 20px;
+      transition: width 0.2s;
+    }
+
+    /* Skill Colors */
+    .html { background: linear-gradient(135deg, #FF5722, #FF7043); }
+    .css { background: linear-gradient(135deg, #2196F3, #64B5F6); }
+    .javascript { background: linear-gradient(135deg, #FBC02D, #FFF176); color: #333; }
+    .java { background: linear-gradient(135deg, #FF6F00, #FFA000); }
+
+    /* SQL Card */
+    .sql { background: linear-gradient(135deg, #0F766E, #14B8A6); }
+
+    .bootstrap { background: linear-gradient(135deg, #6f42c1, #8e44ad); }
+    .c { background: linear-gradient(135deg, #007ACC, #00A2FF); }
+
+    @media(max-width:768px){
+      body{
+        justify-content:center;
+        padding:20px;
+      }
+
+      .card{
+        flex:0 0 calc(50% - 15px);
+        max-width:calc(50% - 15px);
+        height:250px;
+      }
+
+      .card h2{
+        font-size:1.2rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<a href="frontpage.html" class="back-home">
+  <i class="fas fa-arrow-left"></i> Back to Home
+</a>
+
+<div class="card html" data-target="80">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML Logo">
+  <h2>HTML</h2>
+  <p>Click to show progress</p>
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+</div>
+
+<div class="card css" data-target="75">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS Logo">
+  <h2>CSS</h2>
+  <p>Click to show progress</p>
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+</div>
+
+<div class="card javascript" data-target="70">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript Logo">
+  <h2>JavaScript</h2>
+  <p>Click to show progress</p>
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+</div>
+
+<div class="card java" data-target="85">
+  <img src="https://cdn.iconscout.com/icon/free/png-256/java-60-1174953.png" alt="Java Logo">
+  <h2>Java</h2>
+  <p>Click to show progress</p>
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+</div>
+
+<!-- SQL Card -->
+<div class="card sql" data-target="50">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png" alt="SQL Logo">
+  <h2>SQL</h2>
+  <p>Click to show progress</p>
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+</div>
+
+<div class="card bootstrap" data-target="65">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg" alt="Bootstrap Logo">
+  <h2>Bootstrap</h2>
+  <p>Click to show progress</p>
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+</div>
+
+<div class="card c" data-target="60">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png" alt="C Logo">
+  <h2>C</h2>
+  <p>Click to show progress</p>
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+</div>
+
+<script>
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card => {
+  card.addEventListener("click", () => {
+    const progressContainer = card.querySelector(".progress-container");
+    const progressBar = card.querySelector(".progress-bar");
+    const target = card.getAttribute("data-target");
+
+    progressContainer.style.display = "block";
+
+    let progress = 0;
+    const interval = setInterval(() => {
+      if (progress >= target) {
+        clearInterval(interval);
+      } else {
+        progress++;
+        progressBar.style.width = progress + "%";
+        progressBar.textContent = progress + "%";
+      }
+    }, 20);
+  });
+});
+</script>
+
+</body>
+</html>

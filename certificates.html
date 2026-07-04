@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificates</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      
+      /* Grid Theme Background */
+      background-color: #f8fafc;
+      background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+      background-size: 30px 30px;
+      
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Back Home Button - Aligned to Top Left */
+    .back-home {
+      align-self: flex-start; /* Forces it to the far left edge */
+      text-decoration: none;
+      color: #007bff;
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.3s;
+    }
+
+    .back-home:hover {
+      color: #0056b3;
+      transform: translateX(-5px);
+    }
+
+    .certificate {
+      width: 100%;
+      max-width: 420px;
+      margin: 20px 0;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      overflow: hidden;
+
+      opacity: 0;
+      transform: translateY(60px);
+      transition: all 0.8s ease-in-out;
+    }
+
+    .certificate.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .buttons {
+      display: flex;
+      width: 100%;
+    }
+
+    .buttons button {
+      flex: 1;
+      padding: 15px;
+      border: 1px solid #ccc;
+      background: linear-gradient(to right, #007bff, #0056b3);
+      color: white;
+      font-size: 1em;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .buttons button:first-child {
+      border-right: none;
+    }
+
+    .buttons button:hover {
+      background: linear-gradient(to right, #0056b3, #003d80);
+    }
+
+    .buttons button:active {
+      transform: scale(0.98);
+    }
+
+    .content {
+      min-height: 220px;
+      padding: 20px;
+      text-align: center;
+      background: #fafafa;
+      opacity: 1;
+      transition: opacity 0.4s ease;
+    }
+
+    .content.fade-out {
+      opacity: 0;
+    }
+
+    .content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .content h3 {
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    .content p {
+      line-height: 1.6;
+      text-align: justify;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="frontpage.html" class="back-home">
+    <i class="fas fa-arrow-left"></i> Back to Home
+  </a>
+
+  <div class="certificate">
+    <div class="buttons">
+      <button class="leftBtn">Show Certificate</button>
+      <button class="rightBtn">Show Description</button>
+    </div>
+    <div class="content">
+      <p>Click a button to see the result here...</p>
+    </div>
+  </div>
+
+  <div class="certificate">
+    <div class="buttons">
+      <button class="leftBtn">Show Certificate</button>
+      <button class="rightBtn">Show Description</button>
+    </div>
+    <div class="content">
+      <p>Click a button to see the result here...</p>
+    </div>
+  </div>
+
+  <div class="certificate">
+    <div class="buttons">
+      <button class="leftBtn">Show Certificate</button>
+      <button class="rightBtn">Show Description</button>
+    </div>
+    <div class="content">
+      <p>Click a button to see the result here...</p>
+    </div>
+  </div>
+
+  <div class="certificate">
+    <div class="buttons">
+      <button class="leftBtn">Show Certificate</button>
+      <button class="rightBtn">Show Description</button>
+    </div>
+    <div class="content">
+      <p>Click a button to see the result here...</p>
+    </div>
+  </div>
+
+  <script>
+
+    // ==========================
+    // EDIT YOUR DESCRIPTIONS HERE
+    // ==========================
+
+    const descriptions = [
+
+      `
+      <h3>Internship</h3>
+      <p>
+      Embedded Systems and IoT Internship – Kevell Corp (15 Days)
+Successfully completed a 15-day internship at Kevell Corp focused on Embedded Systems and Internet of Things (IoT). During the internship, I gained practical knowledge of embedded hardware, microcontrollers, sensors, IoT concepts, and real-time applications. I also learned how embedded systems communicate with IoT platforms and developed a better understanding of designing and implementing smart, connected solutions.
+      </p>
+      `,
+
+      `
+      <h3>Java Course</h3>
+      <p>
+      Java Programming Course
+Successfully completed a comprehensive Java Programming course covering the fundamentals of Java and object-oriented programming concepts. Gained knowledge of variables, data types, operators, control statements, arrays, methods, classes and objects, inheritance, polymorphism, abstraction, encapsulation, exception handling, collections, file handling, and basic JDBC concepts. Strengthened problem-solving skills by implementing Java programs and hands-on coding exercises.
+      </p>
+      `,
+
+      `
+      <h3>IOT Competition</h3>
+      <p>
+      Second Prize – IoT Competition (SAEINDIA)
+Secured Second Prize in an IoT Competition organized by SAEINDIA. Showcased an innovative IoT-based project, demonstrating practical knowledge of embedded systems, sensor interfacing, and real-world problem-solving.
+      </p>
+      `,
+
+      `
+      <h3>Cloud Computing Basics</h3>
+      <p>
+      Cloud Computing Basics
+Completed a foundational course in Cloud Computing, learning key concepts such as cloud architecture, virtualization, service and deployment models, cloud storage, networking, scalability, and security. This course provided a strong understanding of modern cloud technologies and their real-world applications.
+      </p>
+      `
+
+    ];
+
+    // ==========================
+    // DON'T CHANGE BELOW
+    // ==========================
+
+    document.querySelectorAll(".certificate").forEach((card, index) => {
+
+      const leftBtn = card.querySelector(".leftBtn");
+      const rightBtn = card.querySelector(".rightBtn");
+      const content = card.querySelector(".content");
+
+      function updateContent(newHtml) {
+        content.classList.add("fade-out");
+
+        setTimeout(() => {
+          content.innerHTML = newHtml;
+          content.classList.remove("fade-out");
+        }, 400);
+      }
+
+      leftBtn.addEventListener("click", () => {
+        updateContent(`<img src="certificate${index+1}.jpg" alt="Certificate ${index+1}">`);
+      });
+
+      rightBtn.addEventListener("click", () => {
+        updateContent(descriptions[index]);
+      });
+
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    document.querySelectorAll(".certificate").forEach(card => {
+      observer.observe(card);
+    });
+
+  </script>
+
+</body>
+</html>
